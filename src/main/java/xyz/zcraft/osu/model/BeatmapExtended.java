@@ -1,4 +1,4 @@
-package xyz.zcraft.osu.model.beatmap;
+package xyz.zcraft.osu.model;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;

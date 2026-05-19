@@ -1,13 +1,8 @@
-package xyz.zcraft.osu.model.score;
+package xyz.zcraft.osu.model;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
-import xyz.zcraft.osu.model.Mod;
-import xyz.zcraft.osu.model.beatmap.BeatmapExtended;
-import xyz.zcraft.osu.model.beatmap.Beatmapset;
-import xyz.zcraft.osu.model.user.User;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 

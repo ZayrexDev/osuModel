@@ -1,8 +1,8 @@
-package xyz.zcraft.osu.model.replay;
+package xyz.zcraft.osu.model;
 
 import java.util.List;
 
-public record OsuReplay(
+public record Replay(
         byte gameMode,
         int gameVersion,
         String beatmapHash,

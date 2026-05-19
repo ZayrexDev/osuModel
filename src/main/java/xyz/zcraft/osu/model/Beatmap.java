@@ -1,4 +1,4 @@
-package xyz.zcraft.osu.model.beatmap;
+package xyz.zcraft.osu.model;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
@@ -21,4 +21,34 @@ public class Beatmap {
     public String version;
     @SerializedName("top_tag_ids")
     public List<UserTagId> topUserTagIds;
+
+    @Data
+    public static class Covers {
+        public String cover;
+
+        @SerializedName("cover@2x")
+        public String cover2x;
+
+        public String card;
+
+        @SerializedName("card@2x")
+        public String card2x;
+
+        public String list;
+
+        @SerializedName("list@2x")
+        public String list2x;
+
+        public String slimcover;
+
+        @SerializedName("slimcover@2x")
+        public String slimcover2x;
+    }
+
+    @Data
+    public static class UserTagId {
+        @SerializedName("tag_id")
+        public int tagId;
+        public int count;
+    }
 }

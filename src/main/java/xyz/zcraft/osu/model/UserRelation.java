@@ -1,4 +1,4 @@
-package xyz.zcraft.osu.model.user;
+package xyz.zcraft.osu.model;
 
 import com.google.gson.annotations.SerializedName;
 

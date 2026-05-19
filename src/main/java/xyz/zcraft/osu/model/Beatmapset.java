@@ -1,9 +1,8 @@
-package xyz.zcraft.osu.model.beatmap;
+package xyz.zcraft.osu.model;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
-import xyz.zcraft.osu.model.user.UserExtended;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class Beatmapset {
     @SerializedName("artist_unicode")
     public String artistUnicode;
 
-    public Covers covers;
+    public Beatmap.Covers covers;
 
     public String creator;
 
@@ -108,5 +107,14 @@ public class Beatmapset {
     public static class Label {
         public Integer id;
         public String name;
+    }
+
+    @Data
+    public static class UserTag {
+        public int id;
+        public String name;
+        @SerializedName("ruleset_id")
+        public int rulesetId;
+        public String description;
     }
 }
