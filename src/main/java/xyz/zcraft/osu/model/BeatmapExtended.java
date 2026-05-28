@@ -51,16 +51,21 @@ public class BeatmapExtended extends Beatmap {
     @SerializedName("playcount")
     public Long playcount;
 
-    @SerializedName("max_combo")
-    public Integer maxCombo;
-
     public Integer ranked;
 
     public String url;
 
+    public String checksum;
+
     public Beatmapset beatmapset;
 
+    @SerializedName("current_user_playcount")
+    public Integer currentUserPlaycount;
+
     public FailTimes failtimes;
+
+    @SerializedName("max_combo")
+    public Integer maxCombo;
 
     public List<Owner> owners;
 

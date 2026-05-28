@@ -8,6 +8,9 @@ import java.util.List;
 
 @Data
 public class Beatmapset {
+    @SerializedName("anime_cover")
+    public Boolean animeCover;
+
     public String artist;
 
     @SerializedName("artist_unicode")
@@ -20,7 +23,15 @@ public class Beatmapset {
     @SerializedName("favourite_count")
     public Long favouriteCount;
 
+    @SerializedName("genre_id")
+    public Integer genreId;
+
+    public Object hype;
+
     public Long id;
+
+    @SerializedName("language_id")
+    public Integer languageId;
 
     public Boolean nsfw;
 
@@ -34,68 +45,106 @@ public class Beatmapset {
 
     public String source;
 
-    @SerializedName("genre_id")
-    public Integer genreId;
-
-    @SerializedName("language_id")
-    public Integer languageId;
+    public Boolean spotlight;
 
     public String status;
-    public String tags;
-
-    public Boolean spotlight;
 
     public String title;
 
     @SerializedName("title_unicode")
     public String titleUnicode;
 
+    @SerializedName("track_id")
+    public Long trackId;
+
     @SerializedName("user_id")
     public Long userId;
 
     public Boolean video = false;
+
+    public Double bpm;
+
+    @SerializedName("can_be_hyped")
+    public Boolean canBeHyped;
+
+    @SerializedName("deleted_at")
+    public String deletedAt;
+
+    @SerializedName("discussion_enabled")
+    public Boolean discussionEnabled;
+
+    @SerializedName("discussion_locked")
+    public Boolean discussionLocked;
+
+    @SerializedName("is_scoreable")
+    public Boolean isScoreable;
+
+    @SerializedName("last_updated")
+    public String lastUpdated;
+
+    @SerializedName("legacy_thread_url")
+    public String legacyThreadUrl;
+
+    @SerializedName("nominations_summary")
+    public NominationsSummary nominationsSummary;
+
+    public int ranked;
+
+    @SerializedName("ranked_date")
+    public String rankedDate;
+
+    public Double rating;
+
     public Boolean storyboard = false;
+
+    @SerializedName("submitted_date")
+    public String submittedDate;
+
+    public String tags;
+
+    public Availability availability;
 
     public List<BeatmapExtended> beatmaps;
 
     public List<BeatmapExtended> converts;
 
     @SerializedName("current_nominations")
-    public List<JsonObject> currentNominations;
-
-    @SerializedName("current_user_attributes")
-    public JsonObject currentUserAttributes;
+    public List<CurrentNomination> currentNominations;
 
     public Description description;
 
-    public List<JsonObject> discussions;
-
-    public List<JsonObject> events;
-
     public Label genre;
 
-    @SerializedName("has_favourited")
-    public Boolean hasFavourited;
-
     public Label language;
-
-    public List<JsonObject> nominations;
 
     @SerializedName("pack_tags")
     public List<String> packTags;
 
     public List<Integer> ratings;
-    public Double rating;
-    public Double bpm;
+
+    @SerializedName("recent_favourites")
+    public List<User> recentFavourites;
+
+    @SerializedName("related_users")
+    public List<User> relatedUsers;
+
     @SerializedName("related_tags")
     public List<UserTag> relatedTags;
-    @SerializedName("recent_favourites")
-    public List<UserExtended> recentFavourites;
-    @SerializedName("related_users")
-    public List<UserExtended> relatedUsers;
-    public UserExtended user;
-    @SerializedName("track_id")
-    public Long trackId;
+
+    public User user;
+
+    @SerializedName("has_favourited")
+    public Boolean hasFavourited;
+
+    @Deprecated
+    @SerializedName("current_user_attributes")
+    public JsonObject currentUserAttributes;
+
+    @Deprecated
+    public List<JsonObject> discussions;
+
+    @Deprecated
+    public List<JsonObject> events;
 
     @Data
     public static class Description {
@@ -116,5 +165,47 @@ public class Beatmapset {
         @SerializedName("ruleset_id")
         public int rulesetId;
         public String description;
+    }
+
+    @Data
+    public static class NominationsSummary {
+        public int current;
+
+        @SerializedName("eligible_main_rulesets")
+        public List<String> eligibleMainRulesets;
+
+        @SerializedName("required_meta")
+        public RequiredMeta requiredMeta;
+
+        @Data
+        public static class RequiredMeta {
+            @SerializedName("main_ruleset")
+            public int mainRuleset;
+
+            @SerializedName("non_main_ruleset")
+            public int nonMainRuleset;
+        }
+    }
+
+    @Data
+    public static class Availability {
+        @SerializedName("download_disabled")
+        public Boolean downloadDisabled;
+
+        @SerializedName("more_information")
+        public Object moreInformation;
+    }
+
+    @Data
+    public static class CurrentNomination {
+        @SerializedName("beatmapset_id")
+        public Long beatmapsetId;
+
+        public String rulesets;
+
+        public boolean reset;
+
+        @SerializedName("user_id")
+        public Long userId;
     }
 }
