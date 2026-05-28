@@ -24,7 +24,7 @@ public class Score {
     @SerializedName("maximum_statistics")
     public ScoreStatistics maximumStatistics;
 
-    public List<String> mods;
+    public List<Mod> mods;
 
     public ScoreStatistics statistics;
 
