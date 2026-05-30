@@ -201,7 +201,7 @@ public class Beatmapset {
         @SerializedName("beatmapset_id")
         public Long beatmapsetId;
 
-        public String rulesets;
+        public List<String> rulesets;
 
         public boolean reset;
 
